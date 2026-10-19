@@ -1,0 +1,14 @@
+---
+import Instagram from '../Instagram.astro';
+import { cfg, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const g = cfg.grupo;
+---
+<dl class="dados">
+  <dt>{t('rotulos.email', lang)}</dt><dd><a href={`mailto:${g.email}`}>{g.email}</a></dd>
+  <dt>{t('rotulos.instagram', lang)}</dt><dd><a href={`https://www.instagram.com/${g.instagram}/`}>@{g.instagram}</a></dd>
+  <dt>{t('rotulos.endereco', lang)}</dt><dd>{txt(g.endereco, lang)}</dd>
+</dl>
+
+<Instagram lang={lang} />

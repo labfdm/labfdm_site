@@ -1,0 +1,14 @@
+---
+// Mostra um valor de evento.config.json: o texto definitivo, um link ({url, texto}) ou,
+// se ainda pendente, o bloco "A CONFIRMAR".
+import { ehPendente, htmlPendente, txt, type Lang } from '../lib/site';
+interface Props { v: any; lang: Lang; emLinha?: boolean }
+const { v, lang, emLinha = false } = Astro.props;
+const pendente = ehPendente(v);
+const link = v && typeof v === 'object' && typeof v.url === 'string';
+---
+{pendente
+  ? <Fragment set:html={htmlPendente(v.pendente, lang, emLinha)} />
+  : link
+    ? <a href={v.url}>{txt(v.texto, lang) || v.url}</a>
+    : <Fragment>{txt(v, lang)}</Fragment>}

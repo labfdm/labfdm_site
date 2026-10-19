@@ -1,0 +1,105 @@
+---
+import '@fontsource-variable/jost';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/700.css';
+import '../styles/global.css';
+import { paginas, href, ativo, t, txt, cfg, type Lang, type ChavePagina } from '../lib/site';
+
+interface Props { lang: Lang; chave: ChavePagina; titulo?: string }
+const { lang, chave, titulo } = Astro.props;
+const outro: Lang = lang === 'pt' ? 'en' : 'pt';
+const nomeSite = cfg.grupo.sigla;
+const tituloPagina = chave === 'inicio' ? `${nomeSite}` : `${titulo ?? t(`titulos.${chave}`, lang)} · ${nomeSite}`;
+const descricao = t(`descricoes.${chave}`, lang);
+const publicada = ativo(chave);
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
+---
+<!doctype html>
+<html lang={lang === 'pt' ? 'pt-BR' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloPagina}</title>
+    <meta name="description" content={descricao} />
+    <meta name="fdm-publicada" content={String(publicada)} />
+    <meta name="theme-color" content="#ffffff" />
+    {!publicada && <meta name="robots" content="noindex" />}
+    <link rel="icon" type="image/png" href={`${base}img/favicon.png`} />
+    <link rel="apple-touch-icon" href={`${base}img/apple-touch-icon.png`} />
+    <link rel="alternate" hreflang="pt-BR" href={href('pt', chave)} />
+    <link rel="alternate" hreflang="en" href={href('en', chave)} />
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">{t('pularConteudo', lang)}</a>
+
+    <header class="topo">
+      <div class="topo__interno">
+        <a class="marca" href={href(lang, 'inicio')} aria-label={t('paginaInicial', lang)}>
+          <img src={`${base}img/logo-fdm.png`} alt="FDM" translate="no" width="48" height="48" />
+        </a>
+
+        <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" hidden>{t('menu', lang)}</button>
+        <nav class="menu" id="menu" aria-label={t('navegacaoPrincipal', lang)}>
+          <ul>
+            {paginas.map((p) => (
+              <li>
+                <a href={href(lang, p.chave)} aria-current={p.chave === chave ? 'page' : undefined}>
+                  {t(`nav.${p.chave}`, lang)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <a class="idioma" href={href(outro, chave)} hreflang={outro === 'pt' ? 'pt-BR' : 'en'} lang={outro === 'pt' ? 'pt-BR' : 'en'}
+           aria-label={t('outroIdiomaRotulo', lang)}>
+          {t('outroIdioma', lang)}
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      {!publicada && (
+        <p class="faixa" role="note">{t('paginaEmElaboracao', lang)}</p>
+      )}
+      <slot />
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape__interno">
+        <p class="rodape__nome">{txt(cfg.grupo.nome, lang)}</p>
+        <p>{txt(cfg.grupo.vinculo, lang)}</p>
+        <p><a href={`mailto:${cfg.grupo.email}`}>{cfg.grupo.email}</a> · <a href={`https://www.instagram.com/${cfg.grupo.instagram}/`}>@{cfg.grupo.instagram}</a></p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      // Sem JavaScript o menu fica sempre visível. Com JavaScript, em telas estreitas ele
+      // começa recolhido e é aberto pelo botão; Esc o fecha e devolve o foco ao botão.
+      (function () {
+        var b = document.querySelector('.menu-botao');
+        var n = document.getElementById('menu');
+        var mq = window.matchMedia('(min-width: 62rem)');
+        function aberto() { return b.getAttribute('aria-expanded') === 'true'; }
+        function aplicar() {
+          if (mq.matches) { b.hidden = true; n.hidden = false; }
+          else { b.hidden = false; n.hidden = !aberto(); }
+        }
+        b.addEventListener('click', function () {
+          b.setAttribute('aria-expanded', String(!aberto()));
+          aplicar();
+        });
+        n.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !mq.matches && aberto()) {
+            b.setAttribute('aria-expanded', 'false');
+            aplicar();
+            b.focus();
+          }
+        });
+        aplicar();
+        mq.addEventListener('change', aplicar);
+      })();
+    </script>
+  </body>
+</html>

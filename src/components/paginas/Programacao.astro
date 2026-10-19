@@ -1,0 +1,41 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, ehPendente, fmtData, fmtHora, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const dados = cfg.programacao;
+const fuso = txt(cfg.site.fusoHorario, lang);
+---
+{ehPendente(dados) || !Array.isArray(dados) || dados.length === 0
+  ? <Campo v={Array.isArray(dados) ? { pendente: { quem: 'Equipe do site', detalhe: { pt: 'A lista está vazia.', en: 'The list is empty.' } } } : dados} lang={lang} />
+  : (
+    <div class="rolagem" role="region" aria-label={`${t('rotulos.tabelaProgramacao', lang)} (${t('rotulos.tabelaRolavel', lang)})`} tabindex="0">
+      <table>
+        <caption>{t('rotulos.tabelaProgramacao', lang)} ({fuso})</caption>
+        <thead>
+          <tr>
+            <th scope="col">{t('rotulos.data', lang)}</th>
+            <th scope="col">{t('rotulos.horario', lang)}</th>
+            <th scope="col">{t('rotulos.atividade', lang)}</th>
+            <th scope="col">{t('rotulos.natureza', lang)}</th>
+            <th scope="col">{t('rotulos.local', lang)}</th>
+            <th scope="col">{t('rotulos.formato', lang)}</th>
+            <th scope="col">{t('rotulos.palestrantes', lang)}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dados.map((a: any) => (
+            <tr>
+              <td>{typeof a.data === 'string' ? fmtData(a.data, lang) : <Campo v={a.data} lang={lang} emLinha />}</td>
+              <td>{typeof a.inicio === 'string' ? `${fmtHora(a.inicio, lang)}${a.fim ? ` a ${fmtHora(a.fim, lang)}` : ''}` : <Campo v={a.inicio} lang={lang} emLinha />}</td>
+              <td><Campo v={a.titulo} lang={lang} emLinha /></td>
+              <td><Campo v={a.natureza} lang={lang} emLinha /></td>
+              <td><Campo v={a.local} lang={lang} emLinha /></td>
+              <td><Campo v={a.formato} lang={lang} emLinha /></td>
+              <td><Campo v={Array.isArray(a.palestrantes) ? a.palestrantes.join('; ') : a.palestrantes} lang={lang} emLinha /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}

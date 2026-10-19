@@ -1,0 +1,30 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, fmtData, fmtHora, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const h = cfg.historico;
+const rotulo = lang === 'pt'
+  ? { tipo: 'Tipo', quando: 'Data e horário', local: 'Local', publico: 'Público', carga: 'Carga horária', registro: 'Registro' }
+  : { tipo: 'Type', quando: 'Date and time', local: 'Venue', publico: 'Audience', carga: 'Workload', registro: 'Record' };
+---
+<p><strong>{t('rotulos.edicoesRealizadas', lang)}:</strong> {h.edicoesRealizadas}</p>
+<ul class="grade">
+  {h.edicoes.map((x: any) => (
+    <li class="cartao">
+      <p class="numero-linha">{x.ano}</p>
+      <h2>{txt(x.titulo, lang)}</h2>
+      <p>{txt(x.descricao, lang)}</p>
+      <dl class="dados dados--cartao">
+        {x.tipo && <><dt>{rotulo.tipo}</dt><dd>{txt(x.tipo, lang)}</dd></>}
+        <dt>{rotulo.quando}</dt>
+        <dd>{fmtData(x.data, lang)}, {fmtHora(x.horario, lang)} {lang === 'pt' ? 'às' : 'to'} {fmtHora(x.fim, lang)}</dd>
+        <dt>{rotulo.local}</dt><dd>{txt(x.local, lang)}</dd>
+        {x.publico && <><dt>{rotulo.publico}</dt><dd>{txt(x.publico, lang)}</dd></>}
+        {x.cargaHoraria && <><dt>{rotulo.carga}</dt><dd>{txt(x.cargaHoraria, lang)}</dd></>}
+        {x.registro && <><dt>{rotulo.registro}</dt><dd>{txt(x.registro, lang)}</dd></>}
+      </dl>
+    </li>
+  ))}
+</ul>
+<Campo v={h.publicoEResultados} lang={lang} />

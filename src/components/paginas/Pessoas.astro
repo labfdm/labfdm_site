@@ -1,0 +1,19 @@
+---
+// Lista de pessoas (convidados, comitês, comissão). Se o dado ainda for pendente, mostra o bloco provisório.
+import Campo from '../Campo.astro';
+import { ehPendente, txt, type Lang } from '../../lib/site';
+interface Props { dados: any; lang: Lang }
+const { dados, lang } = Astro.props;
+---
+{ehPendente(dados) || !Array.isArray(dados) || dados.length === 0
+  ? <Campo v={Array.isArray(dados) ? { pendente: { quem: 'Equipe do site', detalhe: { pt: 'A lista está vazia.', en: 'The list is empty.' } } } : dados} lang={lang} />
+  : <ul class="grade">
+      {dados.map((p: any) => (
+        <li class="cartao">
+          <h2>{p.titulo ? `${p.titulo} ` : ''}{p.nome}</h2>
+          {p.funcao && <p><strong>{txt(p.funcao, lang)}</strong></p>}
+          {p.vinculo && <p>{txt(p.vinculo, lang)}</p>}
+          {p.regiao && <p class="sobrelinha">{txt(p.regiao, lang)}</p>}
+        </li>
+      ))}
+    </ul>}

@@ -1,0 +1,37 @@
+---
+import Perfil from './Perfil.astro';
+import { cfg, texto, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const corpo = texto('sobre', lang);
+const g = cfg.grupo;
+const coordenacao = g.equipe.filter((p: any) => p.grupo === 'coordenacao');
+const supervisao = g.equipe.filter((p: any) => p.grupo === 'supervisao');
+---
+<div class="texto" set:html={corpo?.html} />
+
+<h2>{t('rotulos.coordenacao', lang)}</h2>
+<div class="perfis">
+  {coordenacao.map((p: any) => <Perfil p={p} lang={lang} />)}
+</div>
+
+<h2>{t('rotulos.supervisaoLinhas', lang)}</h2>
+<div class="perfis">
+  {supervisao.map((p: any) => <Perfil p={p} lang={lang} />)}
+</div>
+
+<h2>{t('rotulos.temaAnual', lang)}: {txt(g.temaAnual, lang)}</h2>
+<h3>{t('rotulos.produtosAnuais', lang)}</h3>
+<ul>{g.produtosAnuais.map((p: any) => <li>{txt(p, lang)}</li>)}</ul>
+
+<h2>{t('rotulos.linhas', lang)}</h2>
+<ol class="grade">
+  {g.linhas.map((l: any) => (
+    <li class="cartao">
+      <p class="numero-linha">{lang === 'pt' ? 'Linha' : 'Line'} {String(l.numero).padStart(2, '0')}</p>
+      <h3>{txt(l.nome, lang)}</h3>
+      <p><strong>{t('rotulos.supervisao', lang)}:</strong> {l.supervisao}{l.adjunta ? `. ${t('rotulos.supervisaoAdjunta', lang)}: ${l.adjunta}` : ''}</p>
+      <p>{txt(l.resumo, lang)}</p>
+    </li>
+  ))}
+</ol>

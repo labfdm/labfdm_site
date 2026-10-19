@@ -1,0 +1,14 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, t, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const i = cfg.inscricoes;
+const itens = ['inscricao', 'submissao', 'coordenacaoSessao', 'certificados', 'estudantes'];
+---
+{itens.map((k) => (
+  <section>
+    <h2>{t(`rotulos.${k}`, lang)}</h2>
+    <Campo v={i[k]} lang={lang} />
+  </section>
+))}

@@ -1,0 +1,22 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = cfg.publicacao;
+const c = p.colecaoDoGrupo;
+---
+<h2>{t('rotulos.colecao', lang)}</h2>
+<p><em>{c.titulo}</em>. {t('rotulos.editora', lang)}: {c.editora}.</p>
+<p>{txt(c.descricao, lang)}</p>
+<Campo v={c.link} lang={lang} />
+
+<h2>{t('rotulos.livrosPorLinha', lang)}</h2>
+<ul>
+  {cfg.grupo.linhas.map((l: any) => (
+    <li>{lang === 'pt' ? 'Linha' : 'Line'} {String(l.numero).padStart(2, '0')}: {txt(l.nome, lang)}</li>
+  ))}
+</ul>
+
+<h2>{t('rotulos.anais', lang)}</h2>
+<Campo v={p.anais} lang={lang} />

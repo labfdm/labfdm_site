@@ -1,0 +1,574 @@
+{
+  "_ajuda": "Todo dado do evento fica neste arquivo e nos textos em src/content/textos. Um campo ainda desconhecido é escrito como {\"pendente\": {\"quem\": \"responsável\", \"detalhe\": {\"pt\": \"o que falta\", \"en\": \"what is missing\"}, \"rascunho\": {\"pt\": \"valor provisório\", \"en\": \"provisional value\"}}}. O campo rascunho é opcional. Para confirmar, troque o objeto pelo valor definitivo.",
+  "site": {
+    "url": null,
+    "fusoHorario": {
+      "pt": "horário de Brasília",
+      "en": "Brasília time"
+    }
+  },
+  "grupo": {
+    "sigla": "FDM",
+    "nome": {
+      "pt": "Laboratório de Filosofia do Direito e a Justiça em Movimento",
+      "en": "Laboratory of Philosophy of Law and Justice in Motion"
+    },
+    "vinculo": {
+      "pt": "DEPRO · CCSA · Universidade Federal do Rio Grande do Norte",
+      "en": "DEPRO · CCSA · Federal University of Rio Grande do Norte"
+    },
+    "email": "fdm.ufrn@gmail.com",
+    "instagram": "fdm.ufrn",
+    "endereco": {
+      "pt": "Campus Universitário, Lagoa Nova, Natal/RN, CEP 59078-970",
+      "en": "University Campus, Lagoa Nova, Natal/RN, Brazil, ZIP 59078-970"
+    },
+    "temaAnual": {
+      "pt": "Liberdade, Igualdade e Inclusão",
+      "en": "Liberty, Equality and Inclusion"
+    },
+    "linhas": [
+      {
+        "numero": 1,
+        "nome": {
+          "pt": "Ética, Inovações e Instituições, a partir dos fundamentos da Justiça",
+          "en": "Ethics, Innovations and Institutions, from the Foundations of Justice"
+        },
+        "supervisao": "Heloísa Teixeira Araújo da Silva",
+        "adjunta": null,
+        "resumo": {
+          "pt": "A linha parte dos fundamentos filosóficos da justiça para examinar como a ética e a inovação se projetam sobre as instituições jurídicas, incluindo o ativismo dialógico, as metodologias colaborativas, o protagonismo judicial voltado a soluções inclusivas e restaurativas e os fundamentos morais das decisões judiciais.",
+          "en": "The line starts from the philosophical foundations of justice to examine how ethics and innovation bear on legal institutions, including dialogical activism, collaborative methodologies, judicial protagonism aimed at inclusive and restorative solutions, and the moral foundations of judicial decisions."
+        }
+      },
+      {
+        "numero": 2,
+        "nome": {
+          "pt": "O Futuro da Humanidade e a Justiça",
+          "en": "The Future of Humanity and Justice"
+        },
+        "supervisao": "Yuri Luis Pinheiro Morais Goes",
+        "adjunta": null,
+        "resumo": {
+          "pt": "A linha pergunta que justiça se pode sustentar diante dos desafios globais e das transformações que desenham o futuro da humanidade, com atenção à construção de instituições jurídicas mais adaptativas, sinérgicas e sustentáveis, à ecofilosofia, à inclusão social e ao enfrentamento das desigualdades.",
+          "en": "The line asks what justice can be sustained in the face of global challenges and of the transformations that shape the future of humanity, with attention to building more adaptive, synergistic and sustainable legal institutions, to ecophilosophy, to social inclusion and to the confrontation of inequalities."
+        }
+      },
+      {
+        "numero": 3,
+        "nome": {
+          "pt": "Teorias da Justiça: dos Antigos aos Contemporâneos",
+          "en": "Theories of Justice: From the Ancients to the Contemporaries"
+        },
+        "supervisao": "Daniel Augusto de Alcaniz Santos",
+        "adjunta": "Matheus Costa",
+        "resumo": {
+          "pt": "A linha percorre as grandes teorias da justiça, dos autores antigos aos contemporâneos, com abertura a diferentes autores e recortes e com atenção ao debate sobre justiça distributiva e direitos humanos.",
+          "en": "The line surveys the major theories of justice, from ancient to contemporary authors, open to a range of authors and approaches and attentive to the debate on distributive justice and human rights."
+        }
+      }
+    ],
+    "produtosAnuais": [
+      {
+        "pt": "Um livro organizado por cada linha de pesquisa",
+        "en": "One book organised by each research line"
+      },
+      {
+        "pt": "Seminário “Justiça em movimento: liberdade, igualdade e inclusão”, previsto para 8 a 11 de junho de 2027",
+        "en": "Seminar “Justice in Motion: Liberty, Equality and Inclusion”, planned for 8 to 11 June 2027"
+      },
+      {
+        "pt": "Projeto Filosofia do Direito na Praça",
+        "en": "Philosophy of Law in the Square project"
+      }
+    ],
+    "equipe": [
+      {
+        "id": "leonardo",
+        "grupo": "coordenacao",
+        "titulo": "Prof. Dr.",
+        "nome": "Leonardo Oliveira Freire",
+        "papel": {
+          "pt": "Coordenador do FDM",
+          "en": "Coordinator of FDM"
+        },
+        "vinculo": {
+          "pt": "Professor do Curso de Direito, UFRN",
+          "en": "Professor of Law, UFRN"
+        },
+        "bio": {
+          "pt": [
+            "Professor do Curso de Direito e dos Programas de Pós-Graduação em Direito e em Gestão de Processos Institucionais da UFRN.",
+            "Doutor em Filosofia Prática, área de Filosofia do Direito, pelo Programa de Pós-Graduação Integrado (UFPB, UFPE e UFRN), com período sanduíche na Universidade de Buenos Aires.",
+            "Estágio Pós-Doutoral em Direito (PPGD-UFRN) e em Gestão de Processos Institucionais (PPGPI-UFRN).",
+            "Mestre em Filosofia pela UFRN. Especialista em Perícia Criminal (SENASP/Estácio Natal) e em Gestão em Segurança Pública (ALRN/UERN).",
+            "Bacharel em Direito pela FAL Natal. Bacharel e licenciado em Filosofia pela UFRN.",
+            "Membro Fundador do Instituto Brasileiro de Segurança Pública (IBSP). Oficial da PMRN.",
+            "Coordenador do Grupo de Pesquisa Laboratório de Filosofia do Direito e a Justiça em Movimento da UFRN (CNPq).",
+            "Mestrado e doutorado dedicados à Filosofia do Direito em Kant: fundamentação kantiana do Direito e justificação da punição."
+          ],
+          "en": [
+            "Professor of the Law Course and of the Graduate Programmes in Law and in Institutional Process Management at UFRN.",
+            "PhD in Practical Philosophy, field of Philosophy of Law, from the Integrated Graduate Programme (UFPB, UFPE and UFRN), with a research period at the University of Buenos Aires.",
+            "Postdoctoral internship in Law (PPGD-UFRN) and in Institutional Process Management (PPGPI-UFRN).",
+            "Master in Philosophy from UFRN. Specialist in Criminal Forensics (SENASP/Estácio Natal) and in Public Security Management (ALRN/UERN).",
+            "Bachelor of Laws from FAL Natal. Bachelor and licentiate in Philosophy from UFRN.",
+            "Founding member of the Brazilian Institute of Public Security (IBSP). Officer of the Military Police of Rio Grande do Norte (PMRN).",
+            "Coordinator of the Research Group Laboratory of Philosophy of Law and Justice in Motion at UFRN (CNPq).",
+            "Master’s and doctoral work on the Philosophy of Law in Kant: Kantian foundation of Law and justification of punishment."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/3263821619188327",
+        "orcid": "0000-0002-6688-8538",
+        "foto": "img/equipe/leonardo.webp"
+      },
+      {
+        "id": "danilo",
+        "grupo": "coordenacao",
+        "titulo": "Prof. Dr.",
+        "nome": "Danilo Vaz-Curado Costa",
+        "papel": {
+          "pt": "Coordenador Adjunto do FDM",
+          "en": "Deputy Coordinator of FDM"
+        },
+        "vinculo": {
+          "pt": "Professor do PPG em Filosofia da UNICAP",
+          "en": "Professor in the Graduate Programme in Philosophy, UNICAP"
+        },
+        "bio": {
+          "pt": [
+            "Professor do Programa de Pós-Graduação em Filosofia da UNICAP, do qual é professor permanente fundador.",
+            "Doutor em Filosofia pela UFRGS. Mestre em Filosofia pela UFPE. Bacharel em Direito pela UNICAP. Graduado em Pedagogia pela UNINTER.",
+            "Pós-doutorado em Filosofia do Direito na PUCRS (2026).",
+            "Atua em Filosofia, com ênfase em ética, epistemologia, filosofia da ação e da linguagem e na filosofia de Hegel.",
+            "Advogado, pedagogo e filósofo."
+          ],
+          "en": [
+            "Professor in the Graduate Programme in Philosophy at UNICAP, of which he is a founding permanent professor.",
+            "PhD in Philosophy from UFRGS. Master in Philosophy from UFPE. Bachelor of Laws from UNICAP. Degree in Pedagogy from UNINTER.",
+            "Postdoctoral research in Philosophy of Law at PUCRS (2026).",
+            "Works in Philosophy, with emphasis on ethics, epistemology, the philosophy of action and of language, and Hegel’s philosophy.",
+            "Lawyer, pedagogue and philosopher."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/3081507777738281",
+        "orcid": "0000-0002-3048-1701",
+        "foto": "img/equipe/danilo.webp"
+      },
+      {
+        "id": "jose-orlando",
+        "grupo": "coordenacao",
+        "titulo": "Prof. Dr.",
+        "nome": "José Orlando Ribeiro Rosário",
+        "papel": {
+          "pt": "Fundador e Idealizador do DEPRO",
+          "en": "Founder and originator of DEPRO"
+        },
+        "vinculo": {
+          "pt": "Professor Titular do Curso de Direito, UFRN",
+          "en": "Full Professor of Law, UFRN"
+        },
+        "bio": {
+          "pt": [
+            "Professor Titular da UFRN. Chefe do Departamento de Direito Processual e Propedêutica (DEPRO). Fundador e Idealizador do DEPRO/UFRN.",
+            "Doutor em Função Social do Direito pela FADISP, com tese sobre a razoável duração do processo judicial como instrumento de acesso à justiça.",
+            "Mestre em Direito pela PUC-SP. Bacharel em Direito pela UFBA.",
+            "Foi Juiz de Direito no Poder Judiciário do Estado do Piauí por dezesseis anos.",
+            "Atua com ênfase em Direito Processual Civil, acesso à justiça, direito público e Filosofia do Direito.",
+            "Membro do Colegiado do Curso de Direito e coordenador de projetos de pesquisa e extensão da UFRN."
+          ],
+          "en": [
+            "Full Professor at UFRN. Head of the Department of Procedural Law and Propaedeutics (DEPRO). Founder and originator of DEPRO/UFRN.",
+            "PhD in the Social Function of Law from FADISP, with a thesis on the reasonable duration of judicial proceedings as an instrument of access to justice.",
+            "Master in Law from PUC-SP. Bachelor of Laws from UFBA.",
+            "Served as a Judge in the Judiciary of the State of Piauí for sixteen years.",
+            "Works with emphasis on Civil Procedure, access to justice, public law and Philosophy of Law.",
+            "Member of the Law Course Board and coordinator of research and outreach projects at UFRN."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/7497832675271260",
+        "orcid": "0000-0001-5307-3404",
+        "foto": "img/equipe/jose-orlando.webp"
+      },
+      {
+        "id": "heloisa",
+        "grupo": "supervisao",
+        "linha": 1,
+        "titulo": "",
+        "nome": "Heloísa Teixeira Araújo da Silva",
+        "papel": {
+          "pt": "Supervisão da Linha 01",
+          "en": "Supervisor of Line 01"
+        },
+        "vinculo": {
+          "pt": "Advogada e Mestre em Direito, UFRN",
+          "en": "Lawyer and Master in Law, UFRN"
+        },
+        "bio": {
+          "pt": [
+            "Advogada. Mestre em Direito pela UFRN. Especialista em Direito Penal e Criminologia pela PUCRS. Bacharela em Direito pela UFRN.",
+            "Coordenadora Adjunta do IBCCRIM/RN. Atua em projetos de pesquisa e formação acadêmica na área das Ciências Criminais.",
+            "Pesquisa Direito Penal, Processo Penal e Epistemologia Jurídica, com ênfase em prova penal, standards probatórios e valoração racional da prova."
+          ],
+          "en": [
+            "Lawyer. Master in Law from UFRN. Specialist in Criminal Law and Criminology from PUCRS. Bachelor of Laws from UFRN.",
+            "Deputy Coordinator of IBCCRIM/RN. Works on research and academic training projects in the field of Criminal Sciences.",
+            "Researches Criminal Law, Criminal Procedure and Legal Epistemology, with emphasis on criminal evidence, standards of proof and the rational assessment of evidence."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/5363143949467594",
+        "orcid": "0009-0006-4233-1520",
+        "foto": "img/equipe/heloisa.webp"
+      },
+      {
+        "id": "yuri",
+        "grupo": "supervisao",
+        "linha": 2,
+        "titulo": "",
+        "nome": "Yuri Luis Pinheiro Morais Goes",
+        "papel": {
+          "pt": "Supervisão da Linha 02",
+          "en": "Supervisor of Line 02"
+        },
+        "vinculo": {
+          "pt": "Advogado, especialista em Direito Digital, mestrando em Direito e estagiário docente, UFRN",
+          "en": "Lawyer, specialist in Digital Law, Master’s student in Law and teaching intern, UFRN"
+        },
+        "bio": {
+          "pt": [
+            "Advogado. Membro da Comissão de Direito Digital da OAB/RN.",
+            "Estagiário docente.",
+            "Mestrando em Direito pela UFRN. Dissertação: “O Direito diante do sujeito pós-humano: constitucionalismo digital e o marco regulatório das redes sociais (Temas 987 e 533/STF)”, orientada por José Orlando Ribeiro Rosário e coorientada por Leonardo Oliveira Freire.",
+            "Especialista em Direito Digital. Graduado em Direito pela UFRN. Técnico em Informática para Internet pelo IFRN.",
+            "Pesquisador vinculado ao FDM e ao Grupo de Pesquisa em Administração, Governo e Políticas Públicas do Poder Judiciário (GPJus/UFRN).",
+            "Pesquisa constitucionalismo digital e o sujeito pós-humano: governança algorítmica, dilema da governança de conteúdo e responsabilidade civil das redes sociais, com ênfase nos Temas 987 e 533 do STF."
+          ],
+          "en": [
+            "Lawyer. Member of the Digital Law Commission of the OAB/RN.",
+            "Teaching intern.",
+            "Master’s student in Law at UFRN. Dissertation: “Law in the face of the post-human subject: digital constitutionalism and the regulatory framework for social networks (Topics 987 and 533/STF)”, supervised by José Orlando Ribeiro Rosário and co-supervised by Leonardo Oliveira Freire.",
+            "Specialist in Digital Law. Bachelor of Laws from UFRN. Technician in Internet Computing from IFRN.",
+            "Researcher attached to FDM and to the Research Group on Administration, Government and Public Policies of the Judiciary (GPJus/UFRN).",
+            "Researches digital constitutionalism and the post-human subject: algorithmic governance, the content governance dilemma and the civil liability of social networks, with emphasis on STF Topics 987 and 533."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/1202532495339677",
+        "orcid": "0009-0001-2591-7945",
+        "foto": "img/equipe/yuri.webp"
+      },
+      {
+        "id": "daniel",
+        "grupo": "supervisao",
+        "linha": 3,
+        "titulo": "",
+        "nome": "Daniel Augusto de Alcaniz Santos",
+        "papel": {
+          "pt": "Supervisão da Linha 03",
+          "en": "Supervisor of Line 03"
+        },
+        "vinculo": {
+          "pt": "Professor substituto, DEPRO/UFRN",
+          "en": "Substitute Professor, DEPRO/UFRN"
+        },
+        "bio": {
+          "pt": [
+            "Advogado (OAB/RN 12.951).",
+            "Professor substituto do Departamento de Direito Processual e Propedêutica da UFRN. Membro do Quadro Docente da Escola Superior da Advocacia da OAB/RN.",
+            "Bacharel e Mestre em Direito pela UFRN. Dissertação sobre os fundamentos metafísicos da proteção jurídica às pessoas com Transtorno do Espectro Autista, orientada por José Orlando Ribeiro Rosário e coorientada por Leonardo Oliveira Freire.",
+            "Especialista em Direito Tributário e Constitucional pela UnP.",
+            "Membro do Grupo de Estudos em Filosofia do Direito da UFRN. Pesquisador em História do Direito e Filosofia do Direito."
+          ],
+          "en": [
+            "Lawyer (OAB/RN 12.951).",
+            "Substitute Professor at the Department of Procedural Law and Propaedeutics of UFRN. Member of the Faculty of the Higher School of Advocacy of the OAB/RN.",
+            "Bachelor and Master in Law from UFRN. Dissertation on the metaphysical foundations of the legal protection of persons with Autism Spectrum Disorder, supervised by José Orlando Ribeiro Rosário and co-supervised by Leonardo Oliveira Freire.",
+            "Specialist in Tax and Constitutional Law from UnP.",
+            "Member of the Philosophy of Law Study Group at UFRN. Researcher in Legal History and Philosophy of Law."
+          ]
+        },
+        "lattes": "http://lattes.cnpq.br/1903169032939087",
+        "orcid": "0000-0003-0317-2230",
+        "foto": "img/equipe/daniel.webp"
+      }
+    ]
+  },
+  "evento": {
+    "nome": {
+      "pt": "Justiça em movimento: liberdade, igualdade e inclusão",
+      "en": "Justice in Motion: Liberty, Equality and Inclusion"
+    },
+    "edicao": {
+      "pt": "2ª edição",
+      "en": "2nd edition"
+    },
+    "tema": {
+      "pt": "Liberdade, Igualdade e Inclusão",
+      "en": "Liberty, Equality and Inclusion"
+    },
+    "datas": {
+      "inicio": "2027-06-08",
+      "fim": "2027-06-11"
+    },
+    "cidade": {
+      "pt": "Natal/RN",
+      "en": "Natal, Rio Grande do Norte, Brazil"
+    },
+    "local": {
+      "pt": "UFRN (PPGD e DEPRO)",
+      "en": "UFRN (PPGD and DEPRO)"
+    },
+    "modalidade": {
+      "pt": "Presencial e híbrido",
+      "en": "In person and hybrid"
+    },
+    "abrangencia": {
+      "pt": "Nacional",
+      "en": "National"
+    },
+    "publicoEsperado": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Número esperado de participantes presenciais, por região do Brasil.",
+          "en": "Expected number of in-person participants, by region of Brazil."
+        }
+      }
+    },
+    "eixos": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Eixos temáticos do evento.",
+          "en": "Thematic axes of the event."
+        }
+      }
+    },
+    "acessibilidade": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Condições de acessibilidade do local para pessoas com deficiência ou mobilidade reduzida.",
+          "en": "Venue accessibility conditions for people with disabilities or reduced mobility."
+        }
+      }
+    },
+    "proponente": {
+      "pt": "Prof. Dr. Leonardo Oliveira Freire, Programa de Pós-Graduação em Direito da UFRN",
+      "en": "Prof. Dr. Leonardo Oliveira Freire, Graduate Programme in Law, UFRN"
+    }
+  },
+  "programacao": {
+    "pendente": {
+      "quem": "Prof. Danilo Vaz-Curado Costa",
+      "detalhe": {
+        "pt": "Lista completa de atividades. Cada uma precisa de título, natureza, data, horário, local e palestrante.",
+        "en": "Complete list of activities. Each one needs title, nature, date, time, venue and speaker."
+      }
+    }
+  },
+  "convidados": {
+    "pendente": {
+      "quem": "Prof. Danilo Vaz-Curado Costa",
+      "detalhe": {
+        "pt": "Palestrantes convidados, com titulação, vínculo institucional e região ou país de origem.",
+        "en": "Invited speakers, with academic title, institutional affiliation and region or country of origin."
+      }
+    }
+  },
+  "comiteCientifico": {
+    "pendente": {
+      "quem": "Prof. Danilo Vaz-Curado Costa",
+      "detalhe": {
+        "pt": "Membros do comitê científico, com titulação, vínculo e região ou país.",
+        "en": "Members of the scientific committee, with title, affiliation and region or country."
+      }
+    }
+  },
+  "comissaoOrganizadora": {
+    "pendente": {
+      "quem": "Prof. Leonardo Oliveira Freire",
+      "detalhe": {
+        "pt": "Membros da comissão organizadora, com função e vínculo.",
+        "en": "Members of the organising committee, with role and affiliation."
+      }
+    }
+  },
+  "instituicoes": {
+    "promotora": {
+      "pt": "Programa de Pós-Graduação em Direito da Universidade Federal do Rio Grande do Norte (UFRN)",
+      "en": "Graduate Programme in Law, Federal University of Rio Grande do Norte (UFRN)"
+    },
+    "ppgs": [
+      {
+        "nome": {
+          "pt": "Programa de Pós-Graduação em Direito",
+          "en": "Graduate Programme in Law"
+        },
+        "ies": "UFRN",
+        "coordenacao": "Thiago Oliveira Moreira"
+      },
+      {
+        "nome": {
+          "pt": "Programa de Pós-Graduação em Direito",
+          "en": "Graduate Programme in Law"
+        },
+        "ies": "UFPB",
+        "coordenacao": "Pablo Georges Cícero Fraga Leurquin"
+      },
+      {
+        "nome": {
+          "pt": "Programa de Pós-Graduação em Filosofia",
+          "en": "Graduate Programme in Philosophy"
+        },
+        "ies": "PUCRS",
+        "coordenacao": "Fabio Caprio Leite de Castro"
+      }
+    ],
+    "apoio": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Instituições apoiadoras e autorização de uso das marcas.",
+          "en": "Supporting institutions and authorisation to use their marks."
+        }
+      }
+    }
+  },
+  "inscricoes": {
+    "inscricao": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Link do formulário externo, prazo e categorias (apresentador e ouvinte).",
+          "en": "External form link, deadline and categories (presenter and listener)."
+        }
+      }
+    },
+    "submissao": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Chamada de trabalhos: prazo, normas, eixos aceitos e critérios de seleção.",
+          "en": "Call for papers: deadline, rules, accepted axes and selection criteria."
+        }
+      }
+    },
+    "coordenacaoSessao": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Regras para propor e coordenar sessões temáticas.",
+          "en": "Rules for proposing and chairing thematic sessions."
+        }
+      }
+    },
+    "certificados": {
+      "pendente": {
+        "quem": "Prof. Leonardo Oliveira Freire",
+        "detalhe": {
+          "pt": "Regras de emissão de certificados para apresentadores e ouvintes.",
+          "en": "Rules for issuing certificates to presenters and listeners."
+        }
+      }
+    },
+    "estudantes": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Ações voltadas a estudantes: oficinas, premiação, comissão estudantil.",
+          "en": "Student-oriented actions: workshops, awards, student committee."
+        }
+      }
+    }
+  },
+  "publicacao": {
+    "colecaoDoGrupo": {
+      "titulo": "Filosofia do Direito em Movimento: dos alicerces ao aprimoramento das teorias da justiça",
+      "editora": "Insigne Acadêmica",
+      "descricao": {
+        "pt": "Primeira produção do grupo com os estudantes, lançada na abertura temática de 1º de outubro de 2026. O e-book tem acesso gratuito.",
+        "en": "The group's first production with its students, launched at the thematic opening of 1 October 2026. The e-book is free to access."
+      },
+      "link": {
+        "pendente": {
+          "quem": "Prof. Leonardo Oliveira Freire",
+          "detalhe": {
+            "pt": "Endereço do e-book e ISBN.",
+            "en": "E-book address and ISBN."
+          }
+        }
+      }
+    },
+    "anais": {
+      "pendente": {
+        "quem": "Prof. Danilo Vaz-Curado Costa",
+        "detalhe": {
+          "pt": "Formato e normas de publicação dos anais do evento.",
+          "en": "Format and rules for publishing the event proceedings."
+        }
+      }
+    }
+  },
+  "historico": {
+    "edicoes": [
+      {
+        "ano": 2026,
+        "titulo": {
+          "pt": "Evento de Lançamento do Grupo de Pesquisa Laboratório de Filosofia do Direito e a Justiça em Movimento (FDM)",
+          "en": "Launch Event of the Research Group Laboratory of Philosophy of Law and Justice in Motion (FDM)"
+        },
+        "data": "2026-10-01",
+        "horario": "15:00",
+        "fim": "16:30",
+        "tipo": {
+          "pt": "Seminário",
+          "en": "Seminar"
+        },
+        "local": {
+          "pt": "Auditório do PPGD, UFRN, Natal/RN",
+          "en": "PPGD Auditorium, UFRN, Natal/RN"
+        },
+        "publico": {
+          "pt": "83 participantes",
+          "en": "83 participants"
+        },
+        "registro": {
+          "pt": "Ação de extensão EV933-2026, registrada no SIGAA da UFRN. Unidade proponente: Departamento de Direito Processual e Propedêutica (DEPRO). Coordenação: Prof. Dr. Leonardo Oliveira Freire.",
+          "en": "Outreach activity EV933-2026, registered in UFRN’s SIGAA. Proposing unit: Department of Procedural Law and Propaedeutics (DEPRO). Coordinator: Prof. Dr. Leonardo Oliveira Freire."
+        },
+        "descricao": {
+          "pt": "Apresentação do grupo, do tema anual, das três linhas de pesquisa e lançamento da primeira coletânea.",
+          "en": "Presentation of the group, the annual theme, the three research lines and launch of the first collection."
+        },
+        "cargaHoraria": {
+          "pt": "8 horas, com o encontro presencial de 01/10/2026 e as demais atividades em formato assíncrono",
+          "en": "8 hours, comprising the in-person meeting of 1 October 2026 and the remaining activities in asynchronous format"
+        }
+      }
+    ],
+    "publicoEResultados": {
+      "pendente": {
+        "quem": "Prof. Leonardo Oliveira Freire",
+        "detalhe": {
+          "pt": "Resultados da abertura de 01/10/2026. A ação de extensão consta como “Pendente de relatório” no SIGAA.",
+          "en": "Outcomes of the 1 October 2026 opening. The outreach activity is listed as “Report pending” in SIGAA."
+        }
+      }
+    },
+    "edicoesRealizadas": 1
+  },
+  "paginasPublicadas": {
+    "inicio": true,
+    "sobre": true,
+    "evento": false,
+    "programacao": false,
+    "convidados": false,
+    "comite": false,
+    "comissao": false,
+    "instituicoes": false,
+    "inscricoes": false,
+    "publicacao": false,
+    "historico": false,
+    "contato": true
+  }
+}

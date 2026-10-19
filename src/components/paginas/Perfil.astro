@@ -1,0 +1,22 @@
+---
+import Campo from '../Campo.astro';
+import { txt, ehPendente, type Lang } from '../../lib/site';
+interface Props { p: any; lang: Lang }
+const { p, lang } = Astro.props;
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
+const nomeCompleto = `${p.titulo ? `${p.titulo} ` : ''}${p.nome}`;
+const alt = lang === 'pt' ? `Fotografia de ${nomeCompleto}` : `Photograph of ${nomeCompleto}`;
+---
+<article class="perfil">
+  {p.foto && <img class="perfil__foto" src={`${base}${p.foto}`} alt={alt} width="480" height="600" loading="lazy" decoding="async" />}
+  <div class="perfil__texto">
+    <h3>{nomeCompleto}</h3>
+    <p class="perfil__papel">{txt(p.papel, lang)} · {txt(p.vinculo, lang)}</p>
+    <ul>{p.bio[lang].map((b: string) => <li>{b}</li>)}</ul>
+    <p class="perfil__links">
+      {ehPendente(p.lattes)
+        ? <Campo v={p.lattes} lang={lang} />
+        : <Fragment><a href={p.lattes}>Lattes</a>{p.orcid && <Fragment> · <a href={`https://orcid.org/${p.orcid}`}>ORCID {p.orcid}</a></Fragment>}</Fragment>}
+    </p>
+  </div>
+</article>

@@ -1,0 +1,47 @@
+---
+import Campo from '../Campo.astro';
+import Instagram from '../Instagram.astro';
+import { cfg, ehPendente, fmtPeriodo, href, paginas, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const e = cfg.evento;
+const datas = e.datas;
+const outras = paginas.filter((p) => !['inicio', 'contato'].includes(p.chave));
+---
+<section class="bloco-azul hero" aria-labelledby="titulo-evento">
+  <div class="hero__interno">
+    <p class="sobrelinha">{t('home.chamada', lang)}</p>
+    <h1 id="titulo-evento">{ehPendente(e.nome) ? (txt(e.nome.pendente.rascunho, lang) || cfg.grupo.sigla) : txt(e.nome, lang)}</h1>
+    {ehPendente(e.nome) && <Campo v={e.nome} lang={lang} />}
+    <dl class="fatos">
+      <div><dt>{t('rotulos.tema', lang)}</dt><dd><Campo v={e.tema} lang={lang} /></dd></div>
+      <div><dt>{t('rotulos.datas', lang)}</dt><dd>
+        {ehPendente(datas) ? <Campo v={datas} lang={lang} /> : fmtPeriodo(datas.inicio, datas.fim, lang)}
+      </dd></div>
+      <div><dt>{t('rotulos.local', lang)}</dt><dd><Campo v={e.local} lang={lang} /></dd></div>
+    </dl>
+    <div class="botoes">
+      <a class="botao" href={href(lang, 'programacao')}>{t('nav.programacao', lang)}</a>
+      <a class="botao botao--vazado" href={href(lang, 'inscricoes')}>{t('nav.inscricoes', lang)}</a>
+    </div>
+  </div>
+</section>
+
+<div class="conteudo">
+  <h2>{t('rotulos.temaAnual', lang)}: {txt(cfg.grupo.temaAnual, lang)}</h2>
+  <p class="lide">{lang === 'pt'
+    ? 'O evento integra o ciclo 2026/2027 do Laboratório de Filosofia do Direito e a Justiça em Movimento, que organiza sua pesquisa em três linhas.'
+    : 'The event is part of the 2026/2027 cycle of the Laboratory of Philosophy of Law and Justice in Motion, which organises its research in three lines.'}</p>
+
+  <h2>{t('home.secoes', lang)}</h2>
+  <ul class="grade">
+    {outras.map((p) => (
+      <li class="cartao">
+        <h3><a href={href(lang, p.chave)}>{t(`nav.${p.chave}`, lang)}</a></h3>
+        <p>{t(`descricoes.${p.chave}`, lang)}</p>
+      </li>
+    ))}
+  </ul>
+
+  <Instagram lang={lang} />
+</div>

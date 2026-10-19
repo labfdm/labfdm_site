@@ -1,0 +1,27 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, ehPendente, t, txt, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const i = cfg.instituicoes;
+---
+<h2>{t('rotulos.promotora', lang)}</h2>
+<Campo v={i.promotora} lang={lang} />
+<h2>{t('rotulos.ppgs', lang)}</h2>
+{ehPendente(i.ppgs) || !Array.isArray(i.ppgs)
+  ? <Campo v={i.ppgs} lang={lang} />
+  : (
+    <ul class="grade">
+      {i.ppgs.map((p: any) => (
+        <li class="cartao">
+          <h3>{txt(p.nome, lang)}</h3>
+          <p><strong>{p.ies}</strong></p>
+          <p>{t('rotulos.coordenacaoPrograma', lang)}: {p.coordenacao}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+<h2>{t('rotulos.apoio', lang)}</h2>
+<Campo v={i.apoio} lang={lang} />
+<h2>{lang === 'pt' ? 'Grupo de pesquisa' : 'Research group'}</h2>
+<p>{txt(cfg.grupo.nome, lang)}. {txt(cfg.grupo.vinculo, lang)}.</p>

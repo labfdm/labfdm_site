@@ -1,0 +1,29 @@
+---
+import Campo from '../Campo.astro';
+import { cfg, ehPendente, fmtPeriodo, t, type Lang } from '../../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const e = cfg.evento;
+const campos = ['nome', 'proponente', 'edicao', 'tema', 'datas', 'cidade', 'local', 'acessibilidade', 'modalidade', 'abrangencia', 'publicoEsperado'];
+---
+<dl class="dados">
+  {campos.map((c) => (
+    <>
+      <dt>{t(`rotulos.${c}`, lang)}</dt>
+      <dd>
+        {c === 'datas' && !ehPendente(e.datas)
+          ? fmtPeriodo(e.datas.inicio, e.datas.fim, lang)
+          : <Campo v={e[c]} lang={lang} />}
+      </dd>
+    </>
+  ))}
+</dl>
+
+<h2>{t('rotulos.eixos', lang)}</h2>
+{ehPendente(e.eixos) || !Array.isArray(e.eixos)
+  ? <Campo v={e.eixos} lang={lang} />
+  : (
+    <ol>
+      {e.eixos.map((x: any) => <li><Campo v={x} lang={lang} /></li>)}
+    </ol>
+  )}

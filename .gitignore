@@ -1,0 +1,17 @@
+# Dependências e arquivos gerados
+node_modules/
+dist/
+.astro/
+exportacoes/
+.vscode/
+
+# Documentos internos de planejamento: NÃO publicar em repositório público
+PROMPT_INICIAL_SITE.md
+planejamento-site-eventos-paep.md
+dados-pendentes-prof-danilo.md
+guidelines.md
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

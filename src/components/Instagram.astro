@@ -1,0 +1,45 @@
+---
+// Perfil do FDM no Instagram. O feed só é carregado depois de um clique, para que o site
+// não envie dados do visitante à Meta sem que ele escolha. Sem JavaScript, resta o link.
+import { cfg, t, type Lang } from '../lib/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const perfil = cfg.grupo.instagram;
+const url = `https://www.instagram.com/${perfil}/`;
+---
+<section class="instagram" aria-labelledby="ig-titulo" data-instagram>
+  <h2 id="ig-titulo">{t('instagram.titulo', lang)}</h2>
+  <p>{t('instagram.texto', lang)}</p>
+  <p class="botoes botoes--claro">
+    <a class="botao botao--azul" href={url} rel="noopener">{t('instagram.abrir', lang)} @{perfil}</a>
+    <button class="botao botao--contorno" type="button" aria-expanded="false" aria-controls="ig-quadro"
+            data-src={`${url}embed/`} data-titulo={`${t('instagram.tituloQuadro', lang)} @${perfil}`} hidden>
+      {t('instagram.mostrar', lang)}
+    </button>
+  </p>
+  <p class="instagram__aviso" data-aviso hidden>{t('instagram.aviso', lang)}</p>
+  <div id="ig-quadro" class="instagram__quadro" hidden></div>
+</section>
+
+<script is:inline>
+  (function () {
+    var s = document.querySelector('[data-instagram]');
+    if (!s) return;
+    var b = s.querySelector('button');
+    var q = s.querySelector('.instagram__quadro');
+    var aviso = s.querySelector('[data-aviso]');
+    b.hidden = false;
+    aviso.hidden = false;
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = b.getAttribute('data-src');
+      f.title = b.getAttribute('data-titulo');
+      f.loading = 'lazy';
+      q.appendChild(f);
+      q.hidden = false;
+      b.setAttribute('aria-expanded', 'true');
+      b.hidden = true;
+      aviso.hidden = true;
+    });
+  })();
+</script>

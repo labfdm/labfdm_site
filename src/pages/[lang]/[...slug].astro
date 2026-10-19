@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import Campo from '../../components/Campo.astro';
+import Pessoas from '../../components/paginas/Pessoas.astro';
+import Inicio from '../../components/paginas/Inicio.astro';
+import Sobre from '../../components/paginas/Sobre.astro';
+import Evento from '../../components/paginas/Evento.astro';
+import Programacao from '../../components/paginas/Programacao.astro';
+import Instituicoes from '../../components/paginas/Instituicoes.astro';
+import Inscricoes from '../../components/paginas/Inscricoes.astro';
+import Publicacao from '../../components/paginas/Publicacao.astro';
+import Historico from '../../components/paginas/Historico.astro';
+import Contato from '../../components/paginas/Contato.astro';
+import { cfg, langs, paginas, t, type Lang } from '../../lib/site';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) =>
+    paginas.map((p) => ({
+      params: { lang, slug: p.slug[lang] || undefined },
+      props: { chave: p.chave },
+    })),
+  );
+}
+
+const lang = Astro.params.lang as Lang;
+const { chave } = Astro.props;
+---
+<Base lang={lang} chave={chave}>
+  {chave === 'inicio' ? (
+    <Inicio lang={lang} />
+  ) : (
+    <div class="conteudo">
+      <h1>{t(`titulos.${chave}`, lang)}</h1>
+      {chave === 'sobre' && <Sobre lang={lang} />}
+      {chave === 'evento' && <Evento lang={lang} />}
+      {chave === 'programacao' && <Programacao lang={lang} />}
+      {chave === 'convidados' && <Pessoas dados={cfg.convidados} lang={lang} />}
+      {chave === 'comite' && <Pessoas dados={cfg.comiteCientifico} lang={lang} />}
+      {chave === 'comissao' && <Pessoas dados={cfg.comissaoOrganizadora} lang={lang} />}
+      {chave === 'instituicoes' && <Instituicoes lang={lang} />}
+      {chave === 'inscricoes' && <Inscricoes lang={lang} />}
+      {chave === 'publicacao' && <Publicacao lang={lang} />}
+      {chave === 'historico' && <Historico lang={lang} />}
+      {chave === 'contato' && <Contato lang={lang} />}
+    </div>
+  )}
+</Base>

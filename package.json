@@ -1,0 +1,20 @@
+{
+  "name": "fdm-site-eventos",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/verifica-pendentes.mjs",
+    "preview": "astro preview",
+    "marca": "node scripts/prepara-marca.mjs",
+    "exportar-html": "npm run build && node scripts/exporta-html.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/jost": "^5.3.0",
+    "@fontsource/spectral": "^5.3.0",
+    "astro": "^7.3.5",
+    "marked": "^18.0.14",
+    "sharp": "^0.35.5"
+  }
+}

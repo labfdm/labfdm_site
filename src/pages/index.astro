@@ -1,0 +1,28 @@
+---
+// Página raiz: encaminha para o idioma português e oferece os dois idiomas.
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
+import '@fontsource-variable/jost';
+import '@fontsource/spectral/400.css';
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FDM</title>
+    <meta name="robots" content="noindex" />
+    <meta name="fdm-publicada" content="false" />
+    <meta http-equiv="refresh" content={`0; url=${base}pt/`} />
+    <link rel="icon" type="image/png" href={`${base}img/favicon.png`} />
+  </head>
+  <body>
+    <main class="conteudo" id="conteudo">
+      <h1>FDM</h1>
+      <ul>
+        <li><a href={`${base}pt/`} lang="pt-BR">Português</a></li>
+        <li><a href={`${base}en/`} lang="en">English</a></li>
+      </ul>
+    </main>
+  </body>
+</html>
