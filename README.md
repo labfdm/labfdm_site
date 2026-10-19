@@ -155,3 +155,48 @@ O repositório publica o site sozinho. A cada alteração enviada à branch `mai
 3. Em 1 a 3 minutos o site está atualizado. Acompanhe na aba **Actions**. Se o build falhar, a versão anterior continua no ar e a aba mostra o motivo (por exemplo, uma página marcada como publicada com bloco “A CONFIRMAR”).
 
 Ajuste único, feito uma vez em **Settings > Pages**: em *Build and deployment > Source*, escolha **GitHub Actions** e, em *Custom domain*, informe `labfdm.com.br`.
+
+## Estrutura do site
+
+O site é do **grupo**; o evento é uma seção dele.
+
+- **Menu principal:** Início, O grupo, Evento (com o ano), Publicações, Histórico e Contato.
+- **Seção do evento:** a página do evento e suas subpáginas ficam em `/evento/...` (programação, convidados, comitê científico, comissão organizadora, instituições e inscrições). Elas têm um submenu próprio.
+- **Início:** abre pelo grupo (identidade, apresentação, tema anual e coordenação), depois mostra um banner fixo do evento, as três linhas de pesquisa e os atalhos.
+
+### Mostrar só o que está pronto
+
+Cada página tem uma chave em `paginasPublicadas`, no `evento.config.json`. A publicação automática (GitHub) usa `OCULTAR_RASCUNHOS=1`: nesse modo o site **não gera nem lista** as páginas que ainda não estão como `true`, e os menus e atalhos somem junto. No computador, `npm run build` sem essa variável mostra todas as páginas (as em rascunho aparecem com aviso). Para testar como ficará no ar:
+
+```bash
+OCULTAR_RASCUNHOS=1 npm run build
+```
+
+No PowerShell: `$env:OCULTAR_RASCUNHOS="1"; npm run build`.
+
+### Conferir os links
+
+Depois do build, `npm run verifica-links` confere se todo link e imagem interno aponta para um arquivo que existe.
+
+### Próxima edição do evento
+
+O evento é anual. Para virar a edição:
+
+1. Copie os dados atuais de `evento` para uma nova entrada em `historico.edicoes` (ano, título, data, local, público e resultados).
+2. Troque os dados de `evento` pelos da nova edição (inclusive `ano`), devolva essas páginas a `false` em `paginasPublicadas` e preencha de novo.
+
+## Fluxo de trabalho com duas branches
+
+- **`main`:** é o que está no ar. Só recebe alterações revisadas. Cada alteração em `main` publica o site sozinha.
+- **`rascunho`:** é onde se trabalha. Ninguém edita `main` direto.
+
+Passo a passo para cada atualização:
+
+1. Trabalhe na branch `rascunho` (no VS Code, o nome da branch aparece no canto inferior esquerdo).
+2. Ao enviar, o GitHub roda a verificação (aba **Actions**, fluxo “Verificar site”). Ela monta o site no modo de publicação e confere os links, sem publicar nada.
+3. Abra um **Pull Request** de `rascunho` para `main`. A verificação aparece no próprio pull request.
+4. Se estiver verde, faça o **merge**. O fluxo “Publicar site” roda e o site atualiza em poucos minutos.
+
+Para que ninguém publique por engano, ative a proteção da `main` em **Settings > Branches > Add branch ruleset**: exigir pull request e exigir que a verificação passe antes do merge.
+
+Edição rápida pelo navegador: no GitHub, abra o arquivo (por exemplo `src/content/evento.config.json`), clique no lápis e, ao salvar, escolha **Create a new branch** (e não “Commit directly to main”), abrindo o pull request em seguida.

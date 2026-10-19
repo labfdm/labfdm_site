@@ -11,11 +11,12 @@ import Inscricoes from '../../components/paginas/Inscricoes.astro';
 import Publicacao from '../../components/paginas/Publicacao.astro';
 import Historico from '../../components/paginas/Historico.astro';
 import Contato from '../../components/paginas/Contato.astro';
-import { cfg, langs, paginas, t, type Lang } from '../../lib/site';
+import SubnavEvento from '../../components/SubnavEvento.astro';
+import { cfg, langs, paginas, paginasDoEvento, t, visivel, type Lang } from '../../lib/site';
 
 export function getStaticPaths() {
   return langs.flatMap((lang) =>
-    paginas.map((p) => ({
+    paginas.filter((p) => visivel(p.chave)).map((p) => ({
       params: { lang, slug: p.slug[lang] || undefined },
       props: { chave: p.chave },
     })),
@@ -24,12 +25,14 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Lang;
 const { chave } = Astro.props;
+const doEvento = paginasDoEvento.includes(chave);
 ---
 <Base lang={lang} chave={chave}>
   {chave === 'inicio' ? (
     <Inicio lang={lang} />
   ) : (
     <div class="conteudo">
+      {doEvento && <SubnavEvento lang={lang} atual={chave} />}
       <h1>{t(`titulos.${chave}`, lang)}</h1>
       {chave === 'sobre' && <Sobre lang={lang} />}
       {chave === 'evento' && <Evento lang={lang} />}

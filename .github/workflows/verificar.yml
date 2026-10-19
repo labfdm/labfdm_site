@@ -1,0 +1,28 @@
+# Confere o site em toda branch e em todo pull request, SEM publicar.
+# Só a branch main publica (ver publicar.yml). Assim, erros aparecem antes de chegar ao site no ar.
+name: Verificar site
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      # Mesmo modo da publicação: só as páginas liberadas, e falha se alguma tiver "A CONFIRMAR".
+      - run: npm run build
+        env:
+          OCULTAR_RASCUNHOS: '1'
+      - run: npm run verifica-links

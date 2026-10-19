@@ -13,7 +13,7 @@
     "rascunho": "Rascunho",
     "nav": {
       "inicio": "Início",
-      "sobre": "Sobre",
+      "sobre": "O grupo",
       "evento": "Evento",
       "programacao": "Programação",
       "convidados": "Convidados",
@@ -35,7 +35,7 @@
       "instituicoes": "Instituições e programas de pós-graduação participantes",
       "inscricoes": "Inscrições e submissão de trabalhos",
       "publicacao": "Publicação",
-      "historico": "Histórico de edições",
+      "historico": "Histórico",
       "contato": "Contato"
     },
     "descricoes": {
@@ -49,7 +49,7 @@
       "instituicoes": "Instituição promotora, programas de pós-graduação participantes e apoios.",
       "inscricoes": "Como se inscrever e submeter trabalhos.",
       "publicacao": "Livros por linha de pesquisa e anais.",
-      "historico": "Edições e atividades anteriores do grupo.",
+      "historico": "Marcos do grupo e edições do evento.",
       "contato": "Como falar com a organização."
     },
     "rotulos": {
@@ -101,11 +101,21 @@
       "presencial": "Presencial",
       "remoto": "Remoto",
       "coordenacaoPrograma": "Coordenação do programa",
-      "proponente": "Proponente"
+      "proponente": "Proponente",
+      "visaoGeral": "Visão geral",
+      "livrosDoEvento": "Livros do evento",
+      "livrosDasLinhas": "Livros das linhas de pesquisa"
     },
     "home": {
-      "chamada": "Evento do Laboratório de Filosofia do Direito e a Justiça em Movimento",
-      "secoes": "Neste site"
+      "chamada": "Grupo de pesquisa",
+      "secoes": "Neste site",
+      "eventoDestaque": "Próximo evento",
+      "verEvento": "Ver o evento",
+      "conhecer": "Conhecer o grupo",
+      "linhasTitulo": "Três linhas de pesquisa",
+      "verLinhas": "Conhecer as linhas",
+      "coordenacao": "Coordenação",
+      "coordenacaoAdjunta": "Coordenação adjunta"
     },
     "rodape": {
       "realizacao": "Grupo de pesquisa vinculado ao",
@@ -134,7 +144,7 @@
     "rascunho": "Draft",
     "nav": {
       "inicio": "Home",
-      "sobre": "About",
+      "sobre": "The group",
       "evento": "Event",
       "programacao": "Programme",
       "convidados": "Speakers",
@@ -143,7 +153,7 @@
       "instituicoes": "Institutions",
       "inscricoes": "Registration",
       "publicacao": "Publications",
-      "historico": "Editions",
+      "historico": "History",
       "contato": "Contact"
     },
     "titulos": {
@@ -156,7 +166,7 @@
       "instituicoes": "Participating institutions and graduate programmes",
       "inscricoes": "Registration and paper submission",
       "publicacao": "Publications",
-      "historico": "Past editions",
+      "historico": "History",
       "contato": "Contact"
     },
     "descricoes": {
@@ -170,7 +180,7 @@
       "instituicoes": "Promoting institution, participating graduate programmes and supporters.",
       "inscricoes": "How to register and submit papers.",
       "publicacao": "Books by research line and proceedings.",
-      "historico": "Previous editions and activities of the group.",
+      "historico": "Milestones of the group and editions of the event.",
       "contato": "How to reach the organisers."
     },
     "rotulos": {
@@ -222,11 +232,21 @@
       "presencial": "In person",
       "remoto": "Remote",
       "coordenacaoPrograma": "Programme coordinator",
-      "proponente": "Applicant"
+      "proponente": "Applicant",
+      "visaoGeral": "Overview",
+      "livrosDoEvento": "Event books",
+      "livrosDasLinhas": "Books by research line"
     },
     "home": {
-      "chamada": "Event of the Laboratory of Philosophy of Law and Justice in Motion",
-      "secoes": "On this site"
+      "chamada": "Research group",
+      "secoes": "On this site",
+      "eventoDestaque": "Next event",
+      "verEvento": "See the event",
+      "conhecer": "About the group",
+      "linhasTitulo": "Three research lines",
+      "verLinhas": "Explore the research lines",
+      "coordenacao": "Coordination",
+      "coordenacaoAdjunta": "Deputy coordination"
     },
     "rodape": {
       "realizacao": "Research group attached to",

@@ -1,19 +1,42 @@
 ---
-import Campo from '../Campo.astro';
-import { cfg, fmtData, fmtHora, t, txt, type Lang } from '../../lib/site';
+import { cfg, ehPendente, fmtData, fmtHora, fmtPeriodo, t, txt, type Lang } from '../../lib/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const h = cfg.historico;
+const e = cfg.evento;
 const rotulo = lang === 'pt'
-  ? { tipo: 'Tipo', quando: 'Data e horário', local: 'Local', publico: 'Público', carga: 'Carga horária', registro: 'Registro' }
-  : { tipo: 'Type', quando: 'Date and time', local: 'Venue', publico: 'Audience', carga: 'Workload', registro: 'Record' };
+  ? { tipo: 'Tipo', quando: 'Data e horário', local: 'Local', publico: 'Público', carga: 'Carga horária', registro: 'Registro', resultados: 'Resultados' }
+  : { tipo: 'Type', quando: 'Date and time', local: 'Venue', publico: 'Audience', carga: 'Workload', registro: 'Record', resultados: 'Outcomes' };
+
+// Linha do tempo: marcos cadastrados + a próxima edição, lida do cadastro do evento (para não divergir dele).
+const marcos = [...h.linhaDoTempo];
+if (e.datas && !ehPendente(e.datas) && !ehPendente(e.nome)) {
+  marcos.push({
+    quando: { pt: fmtPeriodo(e.datas.inicio, e.datas.fim, 'pt'), en: fmtPeriodo(e.datas.inicio, e.datas.fim, 'en') },
+    texto: {
+      pt: `${txt(e.edicao, 'pt')} do evento do grupo, “${txt(e.nome, 'pt')}” (previsto).`,
+      en: `${txt(e.edicao, 'en')} of the group’s event, “${txt(e.nome, 'en')}” (planned).`,
+    },
+  });
+}
 ---
+<h2>{lang === 'pt' ? 'O grupo em datas' : 'The group in dates'}</h2>
+<ol class="tempo">
+  {marcos.map((m: any) => (
+    <li>
+      <p class="tempo__quando">{txt(m.quando, lang)}</p>
+      <p>{txt(m.texto, lang)}</p>
+    </li>
+  ))}
+</ol>
+
+<h2>{lang === 'pt' ? 'Edições do evento' : 'Event editions'}</h2>
 <p><strong>{t('rotulos.edicoesRealizadas', lang)}:</strong> {h.edicoesRealizadas}</p>
 <ul class="grade">
   {h.edicoes.map((x: any) => (
     <li class="cartao">
       <p class="numero-linha">{x.ano}</p>
-      <h2>{txt(x.titulo, lang)}</h2>
+      <h3>{txt(x.titulo, lang)}</h3>
       <p>{txt(x.descricao, lang)}</p>
       <dl class="dados dados--cartao">
         {x.tipo && <><dt>{rotulo.tipo}</dt><dd>{txt(x.tipo, lang)}</dd></>}
@@ -22,9 +45,9 @@ const rotulo = lang === 'pt'
         <dt>{rotulo.local}</dt><dd>{txt(x.local, lang)}</dd>
         {x.publico && <><dt>{rotulo.publico}</dt><dd>{txt(x.publico, lang)}</dd></>}
         {x.cargaHoraria && <><dt>{rotulo.carga}</dt><dd>{txt(x.cargaHoraria, lang)}</dd></>}
+        {x.resultados && <><dt>{rotulo.resultados}</dt><dd>{txt(x.resultados, lang)}</dd></>}
         {x.registro && <><dt>{rotulo.registro}</dt><dd>{txt(x.registro, lang)}</dd></>}
       </dl>
     </li>
   ))}
 </ul>
-<Campo v={h.publicoEResultados} lang={lang} />

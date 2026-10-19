@@ -6,12 +6,15 @@ const { lang } = Astro.props;
 const p = cfg.publicacao;
 const c = p.colecaoDoGrupo;
 ---
+<h2>{t('rotulos.livrosDoEvento', lang)}</h2>
+<Campo v={p.livrosDoEvento} lang={lang} />
+
 <h2>{t('rotulos.colecao', lang)}</h2>
 <p><em>{c.titulo}</em>. {t('rotulos.editora', lang)}: {c.editora}.</p>
 <p>{txt(c.descricao, lang)}</p>
 <Campo v={c.link} lang={lang} />
 
-<h2>{t('rotulos.livrosPorLinha', lang)}</h2>
+<h2>{t('rotulos.livrosDasLinhas', lang)}</h2>
 <ul>
   {cfg.grupo.linhas.map((l: any) => (
     <li>{lang === 'pt' ? 'Linha' : 'Line'} {String(l.numero).padStart(2, '0')}: {txt(l.nome, lang)}</li>

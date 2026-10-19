@@ -26,7 +26,10 @@ jobs:
           node-version: lts/*
           cache: npm
       - run: npm ci
+      # Na publicação, só vão ao ar as páginas marcadas como publicadas (paginasPublicadas no evento.config.json).
       - run: npm run build
+        env:
+          OCULTAR_RASCUNHOS: '1'
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
