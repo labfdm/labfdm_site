@@ -6,23 +6,29 @@ export type Lang = 'pt' | 'en';
 export const langs: Lang[] = ['pt', 'en'];
 export const cfg: any = config;
 
-/** Páginas do site. Os critérios são os nove de mérito do edital PAEP 2027 (seção 4 do planejamento). */
+/** Páginas do site. Os critérios são os nove de mérito do edital PAEP 2027 (seção 4 do planejamento).
+ *  O site é do grupo; o evento é uma seção dele (`pai: 'evento'`), com subpáginas em /evento/... */
 export const paginas = [
   { chave: 'inicio', slug: { pt: '', en: '' }, criterios: [1, 2] },
   { chave: 'sobre', slug: { pt: 'sobre', en: 'about' }, criterios: [1, 3] },
   { chave: 'evento', slug: { pt: 'evento', en: 'event' }, criterios: [1, 2] },
-  { chave: 'programacao', slug: { pt: 'programacao', en: 'programme' }, criterios: [4] },
-  { chave: 'convidados', slug: { pt: 'convidados', en: 'speakers' }, criterios: [2, 5] },
-  { chave: 'comite', slug: { pt: 'comite-cientifico', en: 'scientific-committee' }, criterios: [6] },
-  { chave: 'comissao', slug: { pt: 'comissao-organizadora', en: 'organising-committee' }, criterios: [7] },
-  { chave: 'instituicoes', slug: { pt: 'instituicoes', en: 'institutions' }, criterios: [2, 3, 9] },
-  { chave: 'inscricoes', slug: { pt: 'inscricoes', en: 'registration' }, criterios: [8] },
+  { chave: 'programacao', pai: 'evento', slug: { pt: 'evento/programacao', en: 'event/programme' }, criterios: [4] },
+  { chave: 'convidados', pai: 'evento', slug: { pt: 'evento/convidados', en: 'event/speakers' }, criterios: [2, 5] },
+  { chave: 'comite', pai: 'evento', slug: { pt: 'evento/comite-cientifico', en: 'event/scientific-committee' }, criterios: [6] },
+  { chave: 'comissao', pai: 'evento', slug: { pt: 'evento/comissao-organizadora', en: 'event/organising-committee' }, criterios: [7] },
+  { chave: 'instituicoes', pai: 'evento', slug: { pt: 'evento/instituicoes', en: 'event/institutions' }, criterios: [2, 3, 9] },
+  { chave: 'inscricoes', pai: 'evento', slug: { pt: 'evento/inscricoes', en: 'event/registration' }, criterios: [8] },
   { chave: 'publicacao', slug: { pt: 'publicacao', en: 'publications' }, criterios: [1, 8] },
   { chave: 'historico', slug: { pt: 'historico', en: 'past-editions' }, criterios: [3] },
   { chave: 'contato', slug: { pt: 'contato', en: 'contact' }, criterios: [] },
 ] as const;
 
 export type ChavePagina = (typeof paginas)[number]['chave'];
+
+/** Itens do menu principal. As subpáginas do evento aparecem no submenu da seção. */
+export const menuPrincipal: ChavePagina[] = ['inicio', 'sobre', 'evento', 'publicacao', 'historico', 'contato'];
+/** A página "evento" e suas subpáginas, na ordem do submenu. */
+export const paginasDoEvento: ChavePagina[] = ['evento', ...paginas.filter((p: any) => p.pai === 'evento').map((p) => p.chave)];
 
 const base = (import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/');
 
@@ -32,6 +38,10 @@ export function href(lang: Lang, chave: ChavePagina): string {
 }
 
 export const ativo = (chave: ChavePagina): boolean => cfg.paginasPublicadas[chave] === true;
+
+/** Com OCULTAR_RASCUNHOS=1 (usado na publicação), o build não gera nem lista páginas ainda não liberadas. */
+export const ocultarRascunhos = process.env.OCULTAR_RASCUNHOS === '1';
+export const visivel = (chave: ChavePagina): boolean => !ocultarRascunhos || ativo(chave);
 
 export const ehPendente = (v: any): boolean =>
   v !== null && typeof v === 'object' && !Array.isArray(v) && 'pendente' in v;

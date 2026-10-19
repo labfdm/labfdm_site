@@ -290,7 +290,11 @@
         "orcid": "0000-0003-0317-2230",
         "foto": "img/equipe/daniel.webp"
       }
-    ]
+    ],
+    "apresentacao": {
+      "pt": "Grupo de pesquisa do Departamento de Direito Processual e Propedêutica (DEPRO), do Centro de Ciências Sociais Aplicadas da Universidade Federal do Rio Grande do Norte, dedicado à filosofia do direito e às teorias da justiça e organizado em três linhas de pesquisa.",
+      "en": "Research group of the Department of Procedural Law and Propaedeutics (DEPRO), Centre for Applied Social Sciences, Federal University of Rio Grande do Norte, devoted to the philosophy of law and theories of justice and organised in three research lines."
+    }
   },
   "evento": {
     "nome": {
@@ -355,7 +359,8 @@
     "proponente": {
       "pt": "Prof. Dr. Leonardo Oliveira Freire, Programa de Pós-Graduação em Direito da UFRN",
       "en": "Prof. Dr. Leonardo Oliveira Freire, Graduate Programme in Law, UFRN"
-    }
+    },
+    "ano": 2027
   },
   "programacao": {
     "pendente": {
@@ -507,6 +512,15 @@
           "en": "Format and rules for publishing the event proceedings."
         }
       }
+    },
+    "livrosDoEvento": {
+      "pendente": {
+        "quem": "Prof. Leonardo Oliveira Freire",
+        "detalhe": {
+          "pt": "Livros do evento (distintos dos livros das linhas de pesquisa): quantidade, número de capítulos e formato.",
+          "en": "Event books (distinct from the research lines’ books): number, chapters and format."
+        }
+      }
     }
   },
   "historico": {
@@ -543,19 +557,46 @@
         "cargaHoraria": {
           "pt": "8 horas, com o encontro presencial de 01/10/2026 e as demais atividades em formato assíncrono",
           "en": "8 hours, comprising the in-person meeting of 1 October 2026 and the remaining activities in asynchronous format"
+        },
+        "resultados": {
+          "pt": "Lançamento da primeira coletânea do grupo e abertura da inscrição de estudantes para integrar as três linhas de pesquisa.",
+          "en": "Launch of the group’s first collection and opening of student registration to join the three research lines."
         }
       }
     ],
-    "publicoEResultados": {
-      "pendente": {
-        "quem": "Prof. Leonardo Oliveira Freire",
-        "detalhe": {
-          "pt": "Resultados da abertura de 01/10/2026. A ação de extensão consta como “Pendente de relatório” no SIGAA.",
-          "en": "Outcomes of the 1 October 2026 opening. The outreach activity is listed as “Report pending” in SIGAA."
+    "edicoesRealizadas": 1,
+    "linhaDoTempo": [
+      {
+        "quando": {
+          "pt": "Março de 2026",
+          "en": "March 2026"
+        },
+        "texto": {
+          "pt": "O grupo é cadastrado no Diretório dos Grupos de Pesquisa do CNPq, tendo como líder o Prof. Dr. Leonardo Oliveira Freire.",
+          "en": "The group is registered in the CNPq Directory of Research Groups, led by Prof. Dr. Leonardo Oliveira Freire."
+        }
+      },
+      {
+        "quando": {
+          "pt": "1º de outubro de 2026",
+          "en": "1 October 2026"
+        },
+        "texto": {
+          "pt": "Evento de lançamento do grupo, no Auditório do PPGD da UFRN, com a apresentação do tema anual e das três linhas de pesquisa e o lançamento da primeira coletânea, em parceria com a editora Insigne Acadêmica. O evento reuniu 83 participantes.",
+          "en": "Launch event of the group, at the PPGD Auditorium at UFRN, presenting the annual theme and the three research lines and launching the first collection, in partnership with the publisher Insigne Acadêmica. The event brought together 83 participants."
+        }
+      },
+      {
+        "quando": {
+          "pt": "Outubro de 2026",
+          "en": "October 2026"
+        },
+        "texto": {
+          "pt": "Abertura das inscrições de estudantes para integrar as linhas de pesquisa, com ingresso inicial como pesquisadores aspirantes.",
+          "en": "Registration opens for students to join the research lines, entering initially as aspiring researchers."
         }
       }
-    },
-    "edicoesRealizadas": 1
+    ]
   },
   "paginasPublicadas": {
     "inicio": true,
@@ -568,7 +609,7 @@
     "instituicoes": false,
     "inscricoes": false,
     "publicacao": false,
-    "historico": false,
+    "historico": true,
     "contato": true
   }
 }

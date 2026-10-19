@@ -8,6 +8,7 @@
     "build": "astro build && node scripts/verifica-pendentes.mjs",
     "preview": "astro preview",
     "marca": "node scripts/prepara-marca.mjs",
+    "verifica-links": "node scripts/verifica-links.mjs",
     "exportar-html": "npm run build && node scripts/exporta-html.mjs"
   },
   "dependencies": {

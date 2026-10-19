@@ -236,3 +236,26 @@ tbody tr:nth-child(even) { background: var(--zebra); }
   .perfil h3 { min-height: 2.4em; }
   .perfil__papel { min-height: 4.8em; font-size: .97rem; line-height: 1.6; }
 }
+
+/* Submenu da seção do evento */
+.subnav { border: 1px solid var(--borda); background: var(--zebra); padding: .75rem 1rem; margin-bottom: 1.75rem; }
+.subnav__titulo { font-family: var(--titulo); font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--cinza); margin: 0 0 .35rem; max-width: none; }
+.subnav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .1rem 1.25rem; }
+.subnav li { max-width: none; }
+.subnav a { display: inline-block; padding: .35rem 0; font-family: var(--titulo); font-weight: 500; font-size: .98rem; text-decoration: none; border-bottom: 3px solid transparent; }
+.subnav a:hover { border-bottom-color: var(--borda); }
+.subnav a[aria-current='page'] { font-weight: 700; border-bottom-color: var(--azul); }
+
+/* Banner fixo do evento na página inicial */
+.banner-evento { border: 1px solid var(--borda); border-left: 6px solid var(--azul); padding: 1.5rem; margin-bottom: 2.5rem; background: var(--fundo); }
+.banner-evento h2 { margin-top: 0; }
+.dados--banner { grid-template-columns: minmax(6rem, 9rem) 1fr; gap: .5rem 1rem; margin: 1rem 0 1.25rem; }
+@media (max-width: 40rem) { .dados--banner { grid-template-columns: 1fr; } }
+.hero .lide { color: #fff; }
+
+/* Linha do tempo do histórico */
+.tempo { list-style: none; margin: 0 0 2rem; padding: 0; border-left: 3px solid var(--borda); }
+.tempo li { position: relative; padding: 0 0 1.25rem 1.5rem; max-width: var(--medida); }
+.tempo li::before { content: ''; position: absolute; left: -.55rem; top: .45rem; width: .85rem; height: .85rem; background: var(--azul); }
+.tempo__quando { font-family: var(--titulo); font-weight: 600; margin: 0 0 .15rem; max-width: none; }
+.tempo li p:last-child { margin-bottom: 0; }

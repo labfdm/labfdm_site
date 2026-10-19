@@ -1,0 +1,22 @@
+---
+// Submenu da seção "Evento": páginas do evento, na mesma ordem em todas elas.
+import { paginasDoEvento, href, t, visivel, cfg, type Lang, type ChavePagina } from '../lib/site';
+interface Props { lang: Lang; atual: ChavePagina }
+const { lang, atual } = Astro.props;
+const itens = paginasDoEvento.filter((c) => visivel(c));
+const rotulo = `${t('nav.evento', lang)} ${cfg.evento.ano}`;
+---
+{itens.length > 1 && (
+  <nav class="subnav" aria-label={rotulo}>
+    <p class="subnav__titulo">{rotulo}</p>
+    <ul>
+      {itens.map((c) => (
+        <li>
+          <a href={href(lang, c)} aria-current={c === atual ? 'page' : undefined}>
+            {c === 'evento' ? t('rotulos.visaoGeral', lang) : t(`nav.${c}`, lang)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
